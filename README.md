@@ -1,27 +1,29 @@
+# 🔐 MERN Stack Role-Based Access Control (RBAC) App
 
-# 🧾 MERN STACK PDF Generator
-
-A full-stack Invoice Generator application built using the **MERN Stack**:  
-**MongoDB + Express.js + React + EncoreJS + Node.js**  
-Featuring secure authentication, dynamic product input, PDF invoice generation, and dashboard tracking.
+A full-stack web application built using the **MERN Stack**:  
+**MongoDB + Express.js + React + Node.js**  
+This project features **JWT-based authentication**, **role-based access control**, and dynamic product visibility based on user roles (`admin`, `seller`, and `buyer`).
 
 ---
 
 ## 🌐 Live Demo
 
-🔗 [Live App Link](https://mern-pdf-generator-ochre.vercel.app/)
+🔗 **Frontend**: [https://mern-rbac-app.vercel.app](https://mern-rbac-app.vercel.app)  
+🔗 **Backend**: [https://mern-rbac-app.onrender.com](https://mern-rbac-app.onrender.com)
 
 ---
 
 ## 🚀 Features
 
-- ✅ User Registration and Login (with JWT Auth)
-- ✅ Add multiple products with automatic Total & GST calculation
-- ✅ Generate PDF Invoice using **Puppeteer**
-- ✅ User Dashboard to view/download previous invoices
-- ✅ Clean and responsive UI using **Tailwind CSS** and **shadcn/ui**
-- ✅ Fully typed with **TypeScript** and global state managed using **Redux**
-- ✅ Modern build setup using **EncoreJS**
+- ✅ JWT-based **Login & Signup**
+- ✅ **Role-Based Dashboard**
+  - 👑 Admin → All Products
+  - 🛒 Seller → Only their own products
+  - 👤 Buyer → Only public products
+- ✅ **Protected Routes** with React
+- ✅ Clean UI with **Tailwind CSS**
+- ✅ Toast notifications using **react-hot-toast**
+- ✅ Deployment using **Vercel** (Frontend) & **Render** (Backend)
 
 ---
 
@@ -29,13 +31,12 @@ Featuring secure authentication, dynamic product input, PDF invoice generation, 
 
 | Layer      | Tech                     |
 |------------|--------------------------|
-| Frontend   | React + Redux + TypeScript |
+| Frontend   | React + Vite             |
 | UI         | Tailwind CSS + shadcn/ui |
+| State Mgmt | useState / useEffect     |
 | Backend    | Node.js + Express.js     |
 | Auth       | JWT (JSON Web Tokens)    |
-| PDF Engine | Puppeteer                |
-| Database   | MongoDB                  |
-| Build Tool | EncoreJS                 |
+| Database   | MongoDB Atlas            |
 
 ---
 
@@ -46,34 +47,48 @@ Featuring secure authentication, dynamic product input, PDF invoice generation, 
 #### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/mwen-pdf-generator.git
-cd mern-pdf-generator
+git clone https://github.com/your-username/mern-rbac-app.git
+cd mern-rbac-app
 ```
 
 #### 2. Setup the Backend
 
 ```bash
-cd server
+cd backend
 npm install
+```
+
+Create a `.env` file:
+
+```env
+PORT=10000
+MONGO_URI=your_mongo_connection_string
+JWT_SECRET=your_secret_key
 ```
 
 Start the backend:
 
 ```bash
-npm run dev
+node server.js
 ```
 
 #### 3. Setup the Frontend
 
 ```bash
-cd ../client
+cd ../frontend
 npm install
+```
+
+Create a `.env` file:
+
+```env
+VITE_API_URL=https://mern-rbac-app.onrender.com/api
 ```
 
 Start the frontend:
 
 ```bash
-npm start
+npm run dev
 ```
 
 ---
@@ -81,16 +96,18 @@ npm start
 ## 🗂️ Project Structure
 
 ```
-mwen-pdf-generator/
-├── client/                # React Frontend (Tailwind + shadcn/ui + Redux)
+mern-rbac-app/
+├── frontend/              # React Frontend (Tailwind + Toast + Protected Routes)
 │   ├── src/
-│   ├── tailwind.config.js
+│   ├── public/
+│   ├── .env
 │   └── ...
-├── server/                # Express Backend (MongoDB + Puppeteer)
-│   ├── routes/
-│   ├── controllers/
+├── backend/               # Express Backend (JWT Auth + MongoDB)
 │   ├── models/
-│   └── ...
+│   ├── routes/
+│   ├── middleware/
+│   ├── .env
+│   └── server.js
 └── README.md
 ```
 
@@ -98,16 +115,22 @@ mwen-pdf-generator/
 
 ## 🧪 API Endpoints
 
-| Method | Endpoint           | Description                    |
-|--------|--------------------|--------------------------------|
-| POST   | `/api/auth/register` | Register a new user           |
-| POST   | `/api/auth/login`    | Login and receive JWT token   |
-| POST   | `/api/invoice`       | Generate invoice & download pdf  |
-| GET    | `/api/invoices`      | Get all invoices of user      |
+| Method | Endpoint           | Description                         |
+|--------|--------------------|-------------------------------------|
+| POST   | `/api/auth/signup` | Register a new user with role       |
+| POST   | `/api/auth/login`  | Login and receive JWT token         |
+| GET    | `/api/products`    | Get products based on user role     |
+| POST   | `/api/products`    | Add a product (admin/seller only)   |
 
 ---
 
 ## 🔗 Deployment Links
 
-- 🌍 **Frontend**: [https://mern-pdf-generator-ochre.vercel.app/](https://mern-pdf-generator-ochre.vercel.app/)  
-- 🛠️ **Backend**: [https://mern-pdf-generator.onrender.com](https://mern-pdf-generator.onrender.com)]
+- 🌍 **Frontend**: [https://mern-rbac-app.vercel.app](https://mern-rbac-app.vercel.app)  
+- ⚙️ **Backend**: [https://mern-rbac-app.onrender.com](https://mern-rbac-app.onrender.com)
+
+---
+
+## 🙋‍♂️ Author
+
+**Your Name** – [Dipanshu Zalke](dipanshuzalke.xyz)
