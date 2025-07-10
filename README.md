@@ -1,9 +1,15 @@
 
-# 🧾 MWEN STACK PDF Generator
+# 🧾 MERN STACK PDF Generator
 
 A full-stack Invoice Generator application built using the **MERN Stack**:  
 **MongoDB + Express.js + React + EncoreJS + Node.js**  
 Featuring secure authentication, dynamic product input, PDF invoice generation, and dashboard tracking.
+
+---
+
+## 🌐 Live Demo
+
+🔗 [Live App Link](https://your-live-frontend-link.com)
 
 ---
 
@@ -54,7 +60,6 @@ npm install
 Start the backend:
 
 ```bash
-cd ../backend
 npm run dev
 ```
 
@@ -99,3 +104,10 @@ mwen-pdf-generator/
 | POST   | `/api/auth/login`    | Login and receive JWT token   |
 | POST   | `/api/invoice`       | Generate invoice & download pdf  |
 | GET    | `/api/invoices`      | Get all invoices of user      |
+
+---
+
+## 🔗 Deployment Links
+
+- 🌍 **Frontend**: [https://mern-pdf-generator-ochre.vercel.app/](https://mern-pdf-generator-ochre.vercel.app/)  
+- 🛠️ **Backend**: [[[https://your-backend-api.com](https://mern-pdf-generator.onrender.com)]
