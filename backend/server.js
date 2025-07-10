@@ -14,7 +14,7 @@ const productRoutes = require("./routes/productRoutes"); // We'll add later
 const app = express();
 
 app.use(cors({
-  origin: "https://mern-rbac-app.vercel.app/", // Vercel frontend URL
+  origin: "https://mern-rbac-app.vercel.app", // Vercel frontend URL
   credentials: true
 }));
 app.use(express.json());
