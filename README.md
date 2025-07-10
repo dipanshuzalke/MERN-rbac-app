@@ -8,7 +8,7 @@ This project features **JWT-based authentication**, **role-based access control*
 
 ## 🌐 Live Demo
 
-🔗 [Live App Link](https://mern-pdf-generator-ochre.vercel.app/)
+🔗 [Live App Link](https://mern-rbac-app.vercel.app/)
 
 ---
 
